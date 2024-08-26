@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../components/ui/button"; // Update the import path to the correct location of Button component
+import { Button } from "./components/ComponentButton";
 
 const meta: Meta<typeof Button> = {
-  title: "UI/Button", // Optionally update the title to reflect the location or purpose
+  title: "SIR/Button",
   component: Button,
   argTypes: {
     variant: {
@@ -15,9 +15,13 @@ const meta: Meta<typeof Button> = {
         "ghost",
         "link",
       ],
+      description: "Select the variant of the button",
     },
-    size: { control: "select", options: ["default", "sm", "lg", "icon"] },
-    // Remove backgroundColor if it's not used in your Button component
+    size: {
+      control: "select",
+      options: ["default", "sm", "lg", "icon"],
+      description: "Select the size of the button",
+    },
   },
 };
 
@@ -26,7 +30,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    children: "Default Button",
+    children: "Default Buttons",
   },
 };
 
